@@ -1,0 +1,87 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-family: cairo;
+}
+
+
+.first {
+  box-sizing: content-box;
+  width: 50px;
+  height: 50px;
+  margin: 50px auto;
+  border-radius: 50%;
+  border: 7px solid #e81d62;
+  border-bottom-color: transparent;
+  position: relative;
+  animation-name: loop;
+  animation-iteration-count: infinite;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+}
+
+.first:hover {
+  animation-play-state: paused;
+}
+
+.first::after {
+
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 7px solid #1a8ee9;
+  top: -15px;
+  left: -15px;
+  border-right-color: transparent;
+}
+
+.first::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 7px solid #ffa806;
+  top: -25px;
+  left: -25px;
+  border-bottom-color: transparent;
+}
+
+@keyframes loop {
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*  ================================================== */
+
+span {
+  width: 50px;
+  height: 50px;
+  display: block;
+  margin: 50px auto;
+  border-radius: 50%;
+  border: 5px solid black;
+  border-bottom-color: transparent;
+  animation-name: spin;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: reverse;
+
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
